@@ -297,6 +297,24 @@
       color:var(--muted2);
       font-size:12.5px;
     }
+    .serviceCard{
+  position: relative;
+}
+
+.serviceCard::before{
+  content:"";
+  position:absolute;
+  top:0; left:0; right:0;
+  height:2px;
+  background: linear-gradient(90deg,#5EA7FF,#A7B0C6);
+  opacity:0;
+  transition: opacity .25s ease;
+}
+
+.serviceCard:hover::before{
+  opacity:1;
+}
+
 
     /* SERVICES – Hover Effect */
 .serviceCard{
