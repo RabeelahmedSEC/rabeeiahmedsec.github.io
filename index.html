@@ -297,6 +297,55 @@
       color:var(--muted2);
       font-size:12.5px;
     }
+
+    /* ================================
+   EXPERIENCE – HOVER INTERACTION
+   (NO LAYOUT CHANGE)
+================================ */
+
+/* Experience job card */
+.job{
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* Hover */
+.job:hover{
+  transform: translateY(-4px);
+  background: linear-gradient(
+    180deg,
+    rgba(94,167,255,0.14),
+    rgba(0,0,0,0.18)
+  );
+  border-color: rgba(94,167,255,0.35);
+  box-shadow:
+    0 18px 40px rgba(0,0,0,0.55),
+    0 0 0 1px rgba(94,167,255,0.18);
+}
+
+/* Title + meta highlight */
+.job:hover .jobTitle{
+  color: #5ea7ff;
+}
+.job:hover .jobMeta{
+  color: rgba(234,240,255,.86);
+}
+
+/* Bullet text slightly brighter on hover */
+.job:hover li{
+  color: rgba(234,240,255,.88);
+}
+
+/* Accent dot glow (timeline dot) */
+.job:hover::before{
+  box-shadow:
+    0 0 0 7px rgba(94,167,255,0.16),
+    0 0 22px rgba(94,167,255,0.25);
+}
+
     .serviceCard{
   position: relative;
 }
