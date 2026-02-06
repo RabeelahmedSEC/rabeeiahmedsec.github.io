@@ -1,57 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Rabeel Ahmed Siddiqui | Executive Secretary</title>
 
 <style>
 :root{
-  --bg0:#050812;
-  --bg1:#0B1220;
-  --card:rgba(255,255,255,.06);
-  --stroke:rgba(255,255,255,.12);
+  --bg0:#050A0F;
+  --bg1:#0A1320;
+
+  --card: rgba(255,255,255,.06);
+  --stroke: rgba(255,255,255,.12);
+
   --text:#EAF0FF;
-  --muted:rgba(234,240,255,.70);
-  --muted2:rgba(234,240,255,.55);
-  --accent1:#62D2FF;
-  --accent2:#7C5CFF;
+  --muted: rgba(234,240,255,.72);
+  --muted2: rgba(234,240,255,.55);
+
+  --accent1:#28F6C8;   /* teal */
+  --accent2:#38BDF8;   /* sky */
+  --accent3:#7C5CFF;   /* violet */
+
   --good:#36D399;
-  --shadow:0 20px 70px rgba(0,0,0,.45);
-  --radius:22px;
-  --radius2:16px;
-  --max:1200px;
+  --shadow: 0 22px 80px rgba(0,0,0,.48);
+  --radius: 22px;
+  --radius2: 16px;
+  --max: 1220px;
 }
 
-*{box-sizing:border-box;}
-html{scroll-behavior:smooth;}
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
 body{
   margin:0;
   font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
   color:var(--text);
   background:
-    radial-gradient(900px 600px at 14% 12%, rgba(98,210,255,.18), transparent 60%),
-    radial-gradient(900px 700px at 86% 10%, rgba(124,92,255,.18), transparent 62%),
-    radial-gradient(900px 700px at 60% 86%, rgba(98,210,255,.12), transparent 65%),
-    linear-gradient(180deg,var(--bg0),var(--bg1));
+    radial-gradient(900px 600px at 16% 12%, rgba(40,246,200,.14), transparent 60%),
+    radial-gradient(900px 700px at 86% 12%, rgba(56,189,248,.14), transparent 62%),
+    radial-gradient(900px 700px at 60% 88%, rgba(124,92,255,.12), transparent 65%),
+    linear-gradient(180deg, var(--bg0), var(--bg1));
   min-height:100vh;
 }
-
-a{color:inherit;}
-.wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 80px;}
+a{ color:inherit; }
+.wrap{ max-width:var(--max); margin:0 auto; padding:26px 18px 80px; }
 
 /* Topbar */
 .topbar{
-  position:sticky;
-  top:14px;
-  z-index:20;
-  margin:0 auto 22px;
-  padding:12px 14px;
-  border-radius:999px;
-  background:rgba(10,16,30,.55);
-  border:1px solid var(--stroke);
-  backdrop-filter:blur(14px);
-  box-shadow:0 10px 35px rgba(0,0,0,.35);
+  position: sticky;
+  top: 14px;
+  z-index: 50;
+  margin: 0 auto 22px;
+  padding: 12px 14px;
+  border-radius: 999px;
+  background: rgba(10, 16, 30, .55);
+  border: 1px solid var(--stroke);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 35px rgba(0,0,0,.35);
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -61,85 +65,93 @@ a{color:inherit;}
   display:flex;
   align-items:center;
   gap:12px;
-  min-width:320px;
+  min-width: 360px;
 }
 .avatar{
-  width:50px;
-  height:50px;
-  border-radius:14px;
+  width:54px;
+  height:54px;
+  border-radius:16px;
   overflow:hidden;
   border:1px solid rgba(255,255,255,.18);
-  background:rgba(255,255,255,.06);
-  box-shadow:0 12px 26px rgba(0,0,0,.32);
+  background: rgba(255,255,255,.06);
+  box-shadow: 0 12px 26px rgba(0,0,0,.32);
   flex-shrink:0;
 }
-.avatar img{width:100%;height:100%;object-fit:cover;display:block;}
-.brandName{font-weight:900;font-size:18px;letter-spacing:.2px;line-height:1.1;}
-.brandSub{font-size:13px;color:var(--muted2);margin-top:4px;}
-.nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;}
+.avatar img{ width:100%; height:100%; object-fit:cover; display:block; }
+.brandName{ font-weight:950; font-size:18px; letter-spacing:.2px; line-height:1.1; }
+.brandSub{ font-size:13px; color:var(--muted2); margin-top:4px; }
+
+.nav{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
 .nav a{
   text-decoration:none;
   font-size:13px;
-  color:var(--muted);
-  padding:10px 14px;
-  border-radius:999px;
-  border:1px solid transparent;
+  color: var(--muted);
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid transparent;
 }
-.nav a:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12);color:var(--text);}
+.nav a:hover{
+  background: rgba(255,255,255,.06);
+  border-color: rgba(255,255,255,.12);
+  color: var(--text);
+}
 
-/* Cards / Sections */
+/* Cards */
 .card{
-  background:var(--card);
-  border:1px solid var(--stroke);
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-  backdrop-filter:blur(14px);
+  background: var(--card);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
   overflow:hidden;
 }
 .section{
-  margin-top:18px;
-  padding:24px;
+  margin-top: 18px;
+  padding: 24px;
 }
 .sectionHead{
   display:flex;
   justify-content:space-between;
   align-items:flex-end;
   gap:12px;
-  margin-bottom:14px;
+  margin-bottom: 14px;
 }
 .sectionHead h3{
   margin:0;
   font-size:16px;
   letter-spacing:.18em;
-  color:var(--muted2);
+  color: var(--muted2);
 }
 .sectionHead .hint{
-  color:var(--muted2);
+  color: var(--muted2);
   font-size:13px;
 }
 
-/* Hero */
-.hero{
-  padding:22px;
-}
+/* HERO */
+.hero{ padding:22px; }
 .heroGrid{
   display:grid;
-  grid-template-columns:360px 1fr;
-  gap:26px;
-  align-items:center;
+  grid-template-columns: 430px 1fr;
+  gap: 26px;
+  align-items: center;
 }
 .heroPhoto{
   position:relative;
-  border-radius:20px;
+  border-radius: 20px;
   overflow:hidden;
-  border:1px solid rgba(255,255,255,.14);
-  background:rgba(0,0,0,.22);
-  box-shadow:0 28px 80px rgba(0,0,0,.45);
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.22);
+  box-shadow: 0 28px 90px rgba(0,0,0,.52);
 }
 .heroPhoto img{
   width:100%;
-  height:360px;
-  object-fit:cover;
+  height: 450px;
+  object-fit: cover;
   display:block;
 }
 .photoBar{
@@ -147,9 +159,9 @@ a{color:inherit;}
   left:14px; right:14px; bottom:14px;
   padding:12px 12px;
   border-radius:16px;
-  background:rgba(0,0,0,.45);
-  border:1px solid rgba(255,255,255,.12);
-  backdrop-filter:blur(10px);
+  background: rgba(0,0,0,.45);
+  border: 1px solid rgba(255,255,255,.12);
+  backdrop-filter: blur(10px);
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -159,59 +171,61 @@ a{color:inherit;}
   display:flex;
   align-items:center;
   gap:10px;
-  color:var(--muted);
+  color: var(--muted);
   font-size:12.5px;
 }
 .dot{
-  width:9px;height:9px;border-radius:50%;
-  background:var(--good);
-  box-shadow:0 0 0 6px rgba(54,211,153,.12);
+  width:9px; height:9px; border-radius:50%;
+  background: var(--good);
+  box-shadow: 0 0 0 6px rgba(54,211,153,.12);
 }
-.chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;}
+.chips{ display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end; }
 .chip{
   font-size:12px;
   padding:8px 10px;
   border-radius:999px;
   border:1px solid rgba(255,255,255,.12);
-  background:rgba(255,255,255,.06);
-  color:var(--muted);
+  background: rgba(255,255,255,.06);
+  color: var(--muted);
   white-space:nowrap;
 }
 
 .heroContent h1{
   margin:0;
-  font-size:52px;
+  font-size:58px;
   line-height:1.02;
-  letter-spacing:-.9px;
+  letter-spacing:-1px;
 }
 .heroContent h1 span{
-  background:linear-gradient(135deg,var(--accent1),var(--accent2));
+  background: linear-gradient(135deg, var(--accent1), var(--accent2), var(--accent3));
   -webkit-background-clip:text;
   background-clip:text;
-  color:transparent;
+  color: transparent;
 }
 .heroContent h2{
   margin:12px 0 10px;
   font-size:20px;
-  color:var(--muted);
-  font-weight:650;
+  color: var(--muted);
+  font-weight: 750;
 }
-.metaRow{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0 18px;}
+.metaRow{ display:flex; flex-wrap:wrap; gap:10px; margin:12px 0 18px; }
 .metaChip{
   padding:10px 14px;
   border-radius:999px;
   border:1px solid rgba(255,255,255,.12);
-  background:rgba(0,0,0,.18);
-  color:var(--muted);
+  background: rgba(0,0,0,.18);
+  color: var(--muted);
   font-size:13px;
 }
 .summary{
   margin:0;
-  color:rgba(234,240,255,.80);
-  line-height:1.75;
-  max-width:80ch;
+  color: rgba(234,240,255,.82);
+  line-height:1.8;
+  max-width: 90ch;
+  font-size: 15.2px;
 }
-.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;}
+
+.actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top:18px; }
 .btn{
   text-decoration:none;
   display:inline-flex;
@@ -221,21 +235,75 @@ a{color:inherit;}
   padding:12px 16px;
   border-radius:14px;
   border:1px solid rgba(255,255,255,.12);
-  background:rgba(255,255,255,.06);
-  color:var(--text);
+  background: rgba(255,255,255,.06);
+  color: var(--text);
   font-size:14px;
-  font-weight:800;
-  transition:transform .08s ease, background .12s ease;
+  font-weight: 950;
+  transition: transform .08s ease, background .12s ease;
 }
-.btn:hover{background:rgba(255,255,255,.10);transform:translateY(-1px);}
+.btn:hover{ background: rgba(255,255,255,.10); transform: translateY(-1px); }
 .btnPrimary{
-  background:linear-gradient(135deg,var(--accent1),var(--accent2));
-  color:#060A14;
-  border-color:transparent;
+  background: linear-gradient(135deg, var(--accent1), var(--accent2));
+  color:#061018;
+  border-color: transparent;
 }
-.btnGhost{background:rgba(0,0,0,.22);}
+.btnGhost{ background: rgba(0,0,0,.22); }
 
-/* Experience */
+.hrNote{
+  margin:12px 0 0;
+  color:var(--muted2);
+  font-size:12.5px;
+}
+
+/* SERVICES */
+.servicesGrid{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap:12px;
+}
+.serviceCard{
+  background: rgba(0,0,0,.18);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: var(--radius2);
+  padding: 16px;
+}
+.serviceCard h4{
+  margin:0 0 8px;
+  font-size:14px;
+  font-weight: 950;
+}
+.serviceCard p{
+  margin:0;
+  color: var(--muted);
+  line-height: 1.75;
+  font-size: 13.8px;
+}
+.kpiRow{
+  margin-top:12px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+.kpi{
+  flex: 1 1 220px;
+  background: rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.10);
+  border-radius: 16px;
+  padding: 14px;
+}
+.kpi b{
+  display:block;
+  font-size:13px;
+  margin-bottom:6px;
+  color: rgba(234,240,255,.9);
+}
+.kpi span{
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* Experience timeline */
 .timeline{
   position:relative;
   padding-left:18px;
@@ -247,24 +315,24 @@ a{color:inherit;}
   position:absolute;
   left:6px; top:8px; bottom:8px;
   width:2px;
-  background:linear-gradient(180deg, rgba(98,210,255,.55), rgba(124,92,255,.55));
+  background: linear-gradient(180deg, rgba(40,246,200,.55), rgba(56,189,248,.55));
   opacity:.85;
 }
 .job{
   position:relative;
   padding:16px 16px 16px 18px;
-  border-radius:var(--radius2);
-  background:rgba(0,0,0,.18);
-  border:1px solid rgba(255,255,255,.10);
+  border-radius: var(--radius2);
+  background: rgba(0,0,0,.18);
+  border: 1px solid rgba(255,255,255,.10);
 }
 .job:before{
   content:"";
   position:absolute;
   left:-2px; top:18px;
-  width:12px;height:12px;
+  width:12px; height:12px;
   border-radius:50%;
-  background:linear-gradient(135deg,var(--accent1),var(--accent2));
-  box-shadow:0 0 0 6px rgba(98,210,255,.10);
+  background: linear-gradient(135deg, var(--accent1), var(--accent2));
+  box-shadow: 0 0 0 6px rgba(40,246,200,.10);
 }
 .jobTop{
   display:flex;
@@ -274,56 +342,56 @@ a{color:inherit;}
   gap:10px;
   margin-bottom:8px;
 }
-.jobTitle{margin:0;font-size:16px;font-weight:900;}
-.jobMeta{color:var(--muted2);font-size:13px;white-space:nowrap;}
+.jobTitle{ margin:0; font-size:16px; font-weight: 950; }
+.jobMeta{ color: var(--muted2); font-size:13px; white-space:nowrap; }
 .job ul{
   margin:10px 0 0;
   padding-left:18px;
-  color:var(--muted);
-  line-height:1.75;
+  color: var(--muted);
+  line-height: 1.85;
 }
-.job li{margin:6px 0;}
+.job li{ margin:6px 0; }
 
-/* Skills grid */
+/* Skills + Education */
 .grid{
   display:grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap:12px;
 }
 .box{
-  background:rgba(0,0,0,.18);
-  border:1px solid rgba(255,255,255,.10);
-  border-radius:var(--radius2);
-  padding:16px;
+  background: rgba(0,0,0,.18);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: var(--radius2);
+  padding: 16px;
 }
 .box h4{
   margin:0 0 10px;
   font-size:13px;
   letter-spacing:.14em;
-  color:var(--muted2);
+  color: var(--muted2);
 }
 .box ul{
   margin:0;
   padding-left:18px;
-  color:var(--muted);
-  line-height:1.75;
+  color: var(--muted);
+  line-height: 1.85;
 }
-.box li{margin:6px 0;}
+.box li{ margin:6px 0; }
 
-/* Footer */
 .footer{
   margin-top:18px;
   text-align:center;
-  color:var(--muted2);
-  font-size:12.5px;
+  color: var(--muted2);
+  font-size: 12.5px;
 }
 
-@media(max-width:980px){
-  .topbar{position:static;border-radius:18px;}
-  .heroGrid{grid-template-columns:1fr;}
-  .heroContent h1{font-size:40px;}
-  .heroPhoto img{height:280px;}
-  .grid{grid-template-columns:1fr;}
+@media(max-width:1050px){
+  .topbar{ position:static; border-radius:18px; }
+  .heroGrid{ grid-template-columns: 1fr; }
+  .heroContent h1{ font-size:42px; }
+  .heroPhoto img{ height:320px; }
+  .grid{ grid-template-columns:1fr; }
+  .servicesGrid{ grid-template-columns:1fr; }
 }
 </style>
 </head>
@@ -340,17 +408,20 @@ a{color:inherit;}
         <div class="brandSub">Executive Secretary · Karachi, Pakistan</div>
       </div>
     </div>
+
     <div class="nav">
-      <a href="#about">About</a>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
       <a href="#education">Education</a>
       <a href="#contact">Contact</a>
+      <a href="Resume.pdf" target="_blank" rel="noopener">Resume</a>
     </div>
   </div>
 
   <!-- HERO -->
-  <div class="card hero" id="about">
+  <div class="card hero" id="home">
     <div class="heroGrid">
 
       <div class="heroPhoto">
@@ -361,6 +432,7 @@ a{color:inherit;}
             <span class="chip">Executive Support</span>
             <span class="chip">Meeting Ops</span>
             <span class="chip">Travel</span>
+            <span class="chip">Documentation</span>
           </div>
         </div>
       </div>
@@ -388,12 +460,67 @@ a{color:inherit;}
           <a href="https://wa.me/923333161273" target="_blank" rel="noopener" class="btn btnGhost">WhatsApp</a>
         </div>
 
-        <p style="margin:12px 0 0;color:var(--muted2);font-size:12.5px;">
+        <div class="hrNote">
           If download doesn’t start, open the PDF directly:
           <a href="Resume.pdf" target="_blank" rel="noopener">Resume.pdf</a>
-        </p>
+        </div>
       </div>
 
+    </div>
+  </div>
+
+  <!-- SERVICES (updated to match your real work) -->
+  <div class="card section" id="services">
+    <div class="sectionHead">
+      <h3>SERVICES</h3>
+      <div class="hint">Executive support deliverables (end-to-end)</div>
+    </div>
+
+    <div class="servicesGrid">
+      <div class="serviceCard">
+        <h4>Calendar & Priority Management</h4>
+        <p>High-volume scheduling, conflict resolution, priority setting, and executive time protection.</p>
+      </div>
+
+      <div class="serviceCard">
+        <h4>Meeting Ops (Agenda → Minutes → Follow-up)</h4>
+        <p>Agenda building, briefing notes, minutes, action tracking, reminders, and closure discipline.</p>
+      </div>
+
+      <div class="serviceCard">
+        <h4>Travel & Logistics Coordination</h4>
+        <p>Flights, hotels, ground transport, itineraries, approvals, vendor follow-up, and last-minute changes.</p>
+      </div>
+
+      <div class="serviceCard">
+        <h4>Official Letters & Invitations</h4>
+        <p>Professional drafting, formatting, letter numbering, dispatch coordination, and stakeholder invites.</p>
+      </div>
+
+      <div class="serviceCard">
+        <h4>Confidential Document Control</h4>
+        <p>Structured filing systems, naming conventions, quick retrieval, compliance readiness, and discretion.</p>
+      </div>
+
+      <div class="serviceCard">
+        <h4>Reporting, Trackers & Dashboards</h4>
+        <p>Excel/Google Sheets trackers, follow-up sheets, summaries, and leadership-ready reporting.</p>
+      </div>
+    </div>
+
+    <div class="kpiRow">
+      <div class="kpi">
+        <b>Stakeholder Handling</b>
+        <span>Coordination with internal departments and external contacts with professional, calm communication.</span>
+      </div>
+      <div class="kpi">
+        <b>Executive Communication</b>
+        <span>Emails, letters, and messages written clearly, professionally, and aligned to leadership tone.</span>
+      </div>
+      <div class="kpi">
+        <b>Operational Support</b>
+        <span>Approvals, vendor liaison, follow-ups, and day-to-day executive office operations support.</span>
+      </div>
     </div>
   </div>
 
@@ -401,7 +528,7 @@ a{color:inherit;}
   <div class="card section" id="experience">
     <div class="sectionHead">
       <h3>EXPERIENCE</h3>
-      <div class="hint">Detailed, executive-focused highlights</div>
+      <div class="hint">Executive-focused highlights</div>
     </div>
 
     <div class="timeline">
@@ -412,15 +539,16 @@ a{color:inherit;}
           <span class="jobMeta">Nov 2025 – Present · Karachi</span>
         </div>
         <ul>
-          <li>Managed CEO’s complex calendar, priorities, and day-to-day executive workflows to maximize leadership effectiveness.</li>
-          <li>Coordinated board-level and senior management meetings (agenda, briefs, minutes, and action tracking).</li>
-          <li>Handled sensitive correspondence, approvals, and executive communications with confidentiality and discretion.</li>
-          <li>Planned domestic and international travel, itineraries, logistics, and vendor coordination.</li>
-          <li>Maintained structured record-control systems for quick retrieval, audit readiness, and governance support.</li>
-          <li>Prepared executive reports, summaries, and updates for decision support and follow-ups.</li>
-          <li>Acted as central coordination point between CEO office, department heads, and external stakeholders.</li>
-          <li>Ensured timely execution of directives through structured tracking and follow-through.</li>
-          <li>Managed confidential documents, contracts, and official files with version control and access discipline.</li>
+          <li>Managed CEO’s complex calendar, high-priority meetings, and executive workflows to optimize leadership effectiveness.</li>
+          <li>Acted on behalf of the CEO in handling sensitive correspondence, communications, and confidential reports with discretion.</li>
+          <li>Led end-to-end coordination of board-level and senior management meetings (agenda, briefs, minutes, action tracking).</li>
+          <li>Served as central coordination point between CEO office, senior leadership, and external stakeholders.</li>
+          <li>Planned and executed domestic/international travel, executive itineraries, and corporate events with cost control.</li>
+          <li>Managed confidential records, contracts, and executive documentation aligned to governance requirements.</li>
+          <li>Established structured digital and physical document control systems supporting audit readiness and accessibility.</li>
+          <li>Monitored strategic initiatives and cross-functional deliverables; provided structured updates to the CEO.</li>
+          <li>Ensured accurate information flow, follow-through on directives, and coordination across departments.</li>
+          <li>Represented the Office of the CEO with professionalism, discretion, and authority in internal/external engagements.</li>
         </ul>
       </div>
 
@@ -430,14 +558,14 @@ a{color:inherit;}
           <span class="jobMeta">Apr 2024 – Nov 2025</span>
         </div>
         <ul>
-          <li>Managed CEO scheduling, appointments, and high-priority meeting coordination.</li>
-          <li>Prepared presentations, reports, and meeting documentation; ensured accurate minutes and follow-ups.</li>
-          <li>Handled travel arrangements including flights, accommodation, itineraries, and approvals.</li>
-          <li>Drafted and proofread official communication on behalf of leadership with professional tone and accuracy.</li>
-          <li>Supported special projects and ensured on-time closure through follow-up and stakeholder coordination.</li>
-          <li>Maintained confidentiality across HR, finance, client communication, and internal matters.</li>
-          <li>Managed executive inbox/calls, prioritized tasks, and ensured smooth information flow.</li>
-          <li>Maintained structured files and trackers to improve reporting and operational visibility.</li>
+          <li>Managed the CEO’s calendar, scheduled appointments, and coordinated meetings with internal/external stakeholders.</li>
+          <li>Handled travel arrangements including flights, accommodations, and complete itineraries.</li>
+          <li>Prepared and organized documents, presentations, and reports for meetings.</li>
+          <li>Acted as primary point of contact for the CEO, screening and prioritizing emails, calls, and correspondence.</li>
+          <li>Drafted and proofread emails, letters, and official communication on behalf of the CEO.</li>
+          <li>Maintained an organized office environment and ensured executive readiness for key engagements.</li>
+          <li>Coordinated special projects assigned by the CEO with timely follow-ups and closure.</li>
+          <li>Handled sensitive information with strict confidentiality and professional judgment.</li>
         </ul>
       </div>
 
@@ -447,12 +575,12 @@ a{color:inherit;}
           <span class="jobMeta">May 2023 – Apr 2024</span>
         </div>
         <ul>
-          <li>Coordinated CEO calendar and resolved scheduling conflicts proactively.</li>
-          <li>Managed executive correspondence, drafting reports, letters, and internal/external emails.</li>
-          <li>Prepared meeting agendas, presentations, minutes, and tracked action items for closure.</li>
-          <li>Coordinated events and stakeholder engagements, ensuring strong follow-through.</li>
-          <li>Handled sensitive information with strict confidentiality and professional judgment.</li>
-          <li>Supported CEO initiatives and ensured timely cross-department coordination.</li>
+          <li>Managed CEO schedule, meetings, appointments, and travel arrangements end-to-end.</li>
+          <li>Prioritized commitments and proactively resolved scheduling conflicts.</li>
+          <li>Served as primary contact for internal/external stakeholders and executive communications.</li>
+          <li>Prepared agendas, presentations, meeting packs; recorded minutes and tracked follow-ups.</li>
+          <li>Conducted research and provided relevant information as requested by the CEO.</li>
+          <li>Maintained strict confidentiality regarding strategies, decisions, and personnel matters.</li>
         </ul>
       </div>
 
@@ -463,8 +591,8 @@ a{color:inherit;}
         </div>
         <ul>
           <li>Supported executive operations through coordination, documentation, and structured reporting.</li>
-          <li>Maintained official records and ensured smooth communication with internal and external stakeholders.</li>
-          <li>Assisted recruitment support activities where required (screening, coordination, documentation).</li>
+          <li>Maintained official records and ensured smooth communication with stakeholders.</li>
+          <li>Assisted recruitment-related coordination and documentation where required.</li>
         </ul>
       </div>
 
@@ -474,10 +602,9 @@ a{color:inherit;}
           <span class="jobMeta">Jul 2017 – Apr 2022</span>
         </div>
         <ul>
-          <li>Handled administration and maintained authorized files, bills, and official records.</li>
-          <li>Supported site coordination and managed staff/labor issues and documentation needs.</li>
-          <li>Assisted recruitment activities, sourcing and coordinating hiring workflows when required.</li>
-          <li>Leveraged platforms such as LinkedIn / Rozee.pk for candidate sourcing and coordination.</li>
+          <li>Handled administration, maintained authorized files and billing records as per department requirements.</li>
+          <li>Supported site coordination and staff/labor documentation assistance.</li>
+          <li>Assisted recruitment coordination where required; used LinkedIn and Rozee.pk for sourcing support.</li>
         </ul>
       </div>
 
@@ -487,8 +614,8 @@ a{color:inherit;}
           <span class="jobMeta">Jan 2015 – Jul 2017</span>
         </div>
         <ul>
-          <li>Provided executive assistance, scheduling support, and documentation management.</li>
-          <li>Supported coordination and internal communication between leadership and teams.</li>
+          <li>Supported scheduling, documentation, and executive coordination.</li>
+          <li>Assisted administrative workflows and internal communication.</li>
         </ul>
       </div>
 
@@ -498,10 +625,10 @@ a{color:inherit;}
           <span class="jobMeta">Jul 2012 – Dec 2014</span>
         </div>
         <ul>
-          <li>Managed CEO scheduling and coordinated meetings, calls, and appointments.</li>
-          <li>Handled travel logistics and executive coordination for senior leadership.</li>
-          <li>Prepared documents, spreadsheets, and maintained filing systems and confidentiality.</li>
-          <li>Organized team communications and internal/off-site events.</li>
+          <li>Managed professional/personal scheduling for CEO; ensured smooth daily executive operations.</li>
+          <li>Coordinated complex calendar flow; handled travel logistics and activities (accommodation/transport/meals).</li>
+          <li>Provided admin support including spreadsheets, database maintenance, typing, and documentation.</li>
+          <li>Maintained strict confidentiality and organized internal/off-site events and team communications.</li>
         </ul>
       </div>
 
@@ -512,19 +639,19 @@ a{color:inherit;}
   <div class="card section" id="skills">
     <div class="sectionHead">
       <h3>SKILLS</h3>
-      <div class="hint">Executive-ready toolset</div>
+      <div class="hint">Core strengths</div>
     </div>
 
     <div class="grid">
       <div class="box">
-        <h4>EXECUTIVE SUPPORT</h4>
+        <h4>EXECUTIVE & OFFICE MANAGEMENT</h4>
         <ul>
-          <li>Complex calendar & diary management</li>
-          <li>Meeting agendas, minutes, and action tracking</li>
-          <li>Stakeholder coordination and executive follow-ups</li>
-          <li>Confidential documentation and record control</li>
-          <li>Travel coordination, vendor handling, approvals</li>
-          <li>Executive communication and professional correspondence</li>
+          <li>Calendar management, prioritization, and time protection</li>
+          <li>Meeting ops: agenda, minutes, action tracking, follow-ups</li>
+          <li>Travel coordination & vendor handling</li>
+          <li>Document preparation and executive formatting</li>
+          <li>Stakeholder communication with discretion</li>
+          <li>Problem-solving and structured execution</li>
         </ul>
       </div>
 
@@ -533,9 +660,9 @@ a{color:inherit;}
         <ul>
           <li>Microsoft Office: Word, Excel, PowerPoint, Outlook</li>
           <li>Google Workspace: Docs, Sheets, Drive, Calendar</li>
-          <li>Trackers, dashboards, reporting sheets</li>
-          <li>AI tools for drafting, summarizing, structured reporting</li>
-          <li>Basic reporting knowledge for performance tracking and operational visibility</li>
+          <li>Dashboards, trackers, reporting summaries</li>
+          <li>AI tools for drafting, summaries, structured reporting</li>
+          <li>Documentation control and record discipline</li>
         </ul>
       </div>
     </div>
@@ -561,7 +688,7 @@ a{color:inherit;}
       <div class="box">
         <h4>WORK STYLE</h4>
         <ul>
-          <li>Discreet, detail-focused, and reliable under pressure</li>
+          <li>Discreet, detail-focused, reliable under pressure</li>
           <li>Fast follow-ups with clear, structured communication</li>
           <li>Process-driven execution and documentation discipline</li>
         </ul>
@@ -576,7 +703,7 @@ a{color:inherit;}
       <div class="hint">Let’s connect</div>
     </div>
 
-    <p style="margin:0;color:var(--muted);line-height:1.75;">
+    <p style="margin:0;color:var(--muted);line-height:1.85;">
       For professional opportunities, you can reach me via email or LinkedIn.
     </p>
 
@@ -597,4 +724,5 @@ a{color:inherit;}
 </script>
 </body>
 </html>
+
 
