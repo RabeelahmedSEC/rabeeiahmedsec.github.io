@@ -21,6 +21,17 @@
       --radius: 22px;
       --radius2: 16px;
       --max: 1120px;
+      /* FIX: Experience section full show */
+#experience, .timeline, .job, .job ul {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+.job ul {
+  display: block !important;
+}
+
     }
 
     *{ box-sizing:border-box; }
@@ -679,19 +690,8 @@
     document.getElementById("y").textContent = new Date().getFullYear();
   </script>
 </body>
+  
 </html>
-/* FIX: Experience section full show */
-#experience, .timeline, .job, .job ul {
-  height: auto !important;
-  max-height: none !important;
-  overflow: visible !important;
-}
-
-.job ul {
-  display: block !important;
-}
-
-
 
 
 
