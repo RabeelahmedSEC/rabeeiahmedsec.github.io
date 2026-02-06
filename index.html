@@ -164,6 +164,57 @@ footer{text-align:center;color:var(--muted);margin-top:40px;font-size:13px}
 .services{grid-template-columns:1fr}
 .navbar{flex-direction:column;gap:14px}
 }
+  /* ================================
+   SERVICES – HOVER INTERACTION
+   (NO LAYOUT CHANGE)
+================================ */
+
+.serviceCard{
+  position: relative;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* Hover effect */
+.serviceCard:hover{
+  transform: translateY(-6px);
+  background: linear-gradient(
+    180deg,
+    rgba(94,167,255,0.18),
+    rgba(255,255,255,0.05)
+  );
+  border-color: rgba(94,167,255,0.45);
+  box-shadow:
+    0 20px 45px rgba(0,0,0,0.55),
+    0 0 0 1px rgba(94,167,255,0.25);
+}
+
+/* Title highlight on hover */
+.serviceCard:hover h4{
+  color: #5ea7ff;
+}
+
+/* Subtle glow line at top */
+.serviceCard::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:2px;
+  background: linear-gradient(90deg, #5ea7ff, #8b7bff);
+  opacity:0;
+  transition: opacity .25s ease;
+  border-radius: 12px 12px 0 0;
+}
+
+.serviceCard:hover::before{
+  opacity:1;
+}
+
 </style>
 </head>
 
