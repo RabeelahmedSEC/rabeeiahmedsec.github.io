@@ -67,11 +67,11 @@
     }
 
     .avatarWrap{
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      border-radius: 14px;
       overflow: hidden;
-      border: 2px solid rgba(255,255,255,0.22);
+      border: 1px solid rgba(255,255,255,0.18);
       box-shadow: 0 10px 22px rgba(0,0,0,.28);
       flex-shrink: 0;
       background: rgba(255,255,255,.06);
@@ -127,12 +127,92 @@
       overflow:hidden;
     }
 
-    /* Hero */
-    .hero{
+    /* HERO (NEW PRO LOOK) */
+    .heroPro{
       display:grid;
-      grid-template-columns: 1.25fr .75fr;
+      grid-template-columns: .95fr 1.05fr;
       gap:16px;
       margin-bottom: 16px;
+      align-items: stretch;
+    }
+
+    .photoCard{
+      position:relative;
+      min-height: 420px;
+    }
+    .photoCard:before{
+      content:"";
+      position:absolute;
+      inset:-1px;
+      background:
+        radial-gradient(520px 260px at 20% 0%, rgba(98,210,255,.16), transparent 60%),
+        radial-gradient(520px 280px at 80% 0%, rgba(124,92,255,.18), transparent 62%);
+      pointer-events:none;
+    }
+
+    .photoInner{
+      position:relative;
+      height:100%;
+      padding: 18px;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+
+    .bigPhoto{
+      width:100%;
+      aspect-ratio: 1 / 1;      /* Square */
+      border-radius: 18px;
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.22);
+      box-shadow: 0 22px 60px rgba(0,0,0,.35);
+    }
+    .bigPhoto img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      display:block;
+    }
+
+    .statusRow{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.18);
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color: var(--muted);
+      font-size: 12.5px;
+    }
+    .dot{
+      width:9px; height:9px; border-radius:50%;
+      background: var(--good);
+      box-shadow: 0 0 0 6px rgba(54,211,153,.12);
+    }
+
+    .miniTags{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .chip{
+      font-size: 12px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      color: var(--muted);
+      white-space: nowrap;
     }
 
     .heroMain{
@@ -144,33 +224,28 @@
       position:absolute;
       inset:-1px;
       background:
-        radial-gradient(540px 220px at 20% 0%, rgba(98,210,255,.16), transparent 60%),
-        radial-gradient(520px 260px at 80% 0%, rgba(124,92,255,.16), transparent 62%);
+        radial-gradient(540px 220px at 20% 0%, rgba(98,210,255,.14), transparent 60%),
+        radial-gradient(520px 260px at 80% 0%, rgba(124,92,255,.14), transparent 62%);
       pointer-events:none;
     }
     .heroMain > *{ position:relative; }
 
-    .pill{
+    .kicker{
       display:inline-flex;
       align-items:center;
-      gap:8px;
-      padding: 8px 12px;
+      gap:10px;
+      padding: 10px 12px;
       border-radius: 999px;
       border: 1px solid rgba(255,255,255,.12);
       background: rgba(255,255,255,.05);
       color: var(--muted);
-      font-size: 12.5px;
+      font-size: 13px;
       margin-bottom: 14px;
-    }
-    .dot{
-      width:9px; height:9px; border-radius:50%;
-      background: var(--good);
-      box-shadow: 0 0 0 6px rgba(54,211,153,.12);
     }
 
     .heroTitle{
       margin:0;
-      font-size: 46px;
+      font-size: 48px;
       line-height: 1.03;
       letter-spacing:-.9px;
     }
@@ -184,9 +259,9 @@
     .heroDesc{
       margin: 14px 0 18px;
       color: var(--muted);
-      line-height: 1.7;
+      line-height: 1.75;
       font-size: 15.5px;
-      max-width: 68ch;
+      max-width: 72ch;
     }
 
     .metaRow{
@@ -235,47 +310,7 @@
       border-color: transparent;
       box-shadow: 0 16px 40px rgba(98,210,255,.12);
     }
-
     .btnGhost{ background: rgba(0,0,0,.22); }
-
-    .heroSide{
-      padding: 22px;
-      display:flex;
-      flex-direction:column;
-      gap:14px;
-    }
-    .sideTitle{
-      margin:0;
-      font-size: 14px;
-      color: var(--muted2);
-      letter-spacing: .15em;
-    }
-    .sideBox{
-      background: rgba(0,0,0,.18);
-      border: 1px solid rgba(255,255,255,.10);
-      border-radius: var(--radius2);
-      padding: 16px;
-    }
-    .sideBox p{
-      margin:0;
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 14px;
-    }
-    .tags{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top: 12px;
-    }
-    .tag{
-      font-size: 12.5px;
-      padding: 10px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.05);
-      color: var(--muted);
-    }
 
     /* Sections */
     .section{ margin-top: 16px; padding: 22px; }
@@ -407,11 +442,11 @@
       text-align:center;
     }
 
-    @media (max-width: 900px){
+    @media (max-width: 980px){
       .topbar{ border-radius: 18px; position: static; }
-      .brand{ min-width: unset; }
-      .hero{ grid-template-columns: 1fr; }
-      .heroTitle{ font-size: 38px; }
+      .heroPro{ grid-template-columns: 1fr; }
+      .heroTitle{ font-size: 40px; }
+      .photoCard{ min-height: unset; }
       .grid{ grid-template-columns: 1fr; }
     }
   </style>
@@ -424,7 +459,6 @@
     <div class="topbar">
       <div class="brand">
         <div class="avatarWrap">
-          <!-- Put profile.jpg in repo root -->
           <img src="profile.jpg" alt="Rabeel Ahmed Siddiqui">
         </div>
         <div class="brandText">
@@ -442,17 +476,36 @@
       </div>
     </div>
 
-    <!-- HERO -->
-    <div class="hero" id="about">
-      <div class="card heroMain">
-        <div class="pill">
-          <span class="dot"></span>
-          Available for executive support roles · Confidential & process-driven
+    <!-- HERO PRO -->
+    <div class="heroPro" id="about">
+
+      <!-- LEFT: BIG SQUARE PHOTO -->
+      <div class="card photoCard">
+        <div class="photoInner">
+          <div class="bigPhoto">
+            <img src="profile.jpg" alt="Rabeel Ahmed Siddiqui">
+          </div>
+
+          <div class="statusRow">
+            <div class="pill">
+              <span class="dot"></span>
+              Available · Confidential & process-driven
+            </div>
+            <div class="miniTags">
+              <span class="chip">Executive Support</span>
+              <span class="chip">Meeting Ops</span>
+              <span class="chip">Travel</span>
+            </div>
+          </div>
         </div>
+      </div>
+
+      <!-- RIGHT: TEXT + CTA -->
+      <div class="card heroMain">
+        <div class="kicker">Executive Secretary · Operations Support</div>
 
         <h1 class="heroTitle">
-          Executive Secretary <span>&</span><br/>
-          Operations Support
+          Rabeel <span>Ahmed Siddiqui</span>
         </h1>
 
         <p class="heroDesc">
@@ -467,52 +520,16 @@
         </div>
 
         <div class="ctaRow">
-          <!-- IMPORTANT: Upload resume as EXACT Resume.pdf in repo root -->
-          <a href="Resume.pdf" class="btn btnPrimary" download>
-            ⬇️ Download Resume
-          </a>
-
-          <a class="btn btnGhost" href="https://www.linkedin.com/in/shaikh-ras-386585207" target="_blank" rel="noopener">
-            in LinkedIn
-          </a>
-
+          <a href="Resume.pdf" class="btn btnPrimary" download>⬇️ Download Resume</a>
+          <a class="btn btnGhost" href="https://www.linkedin.com/in/shaikh-ras-386585207" target="_blank" rel="noopener">in LinkedIn</a>
           <a class="btn" href="mailto:rabeel_siddiqui@outlook.com">✉️ Email</a>
-
-          <a class="btn" href="https://wa.me/923333161273" target="_blank" rel="noopener">
-            💬 WhatsApp
-          </a>
+          <a class="btn" href="https://wa.me/923333161273" target="_blank" rel="noopener">💬 WhatsApp</a>
         </div>
 
         <p style="margin:14px 0 0; color:var(--muted2); font-size:12.5px;">
-          Tip: If download doesn’t start, open the PDF directly: <a href="Resume.pdf" target="_blank" rel="noopener">Resume.pdf</a>
+          Tip: If download doesn’t start, open directly:
+          <a href="Resume.pdf" target="_blank" rel="noopener">Resume.pdf</a>
         </p>
-      </div>
-
-      <div class="card heroSide">
-        <h2 class="sideTitle">PROFILE SNAPSHOT</h2>
-        <div class="sideBox">
-          <p>
-            I support senior leadership with structured calendar management, meeting coordination,
-            executive communication, travel planning, and record control. Detail-focused, discreet,
-            and strong in follow-ups and reporting.
-          </p>
-          <div class="tags">
-            <span class="tag">Calendar & Diary Management</span>
-            <span class="tag">Minutes & Action Tracking</span>
-            <span class="tag">Travel Coordination</span>
-            <span class="tag">Executive Communication</span>
-            <span class="tag">Documentation Control</span>
-            <span class="tag">Excel & Reporting</span>
-          </div>
-        </div>
-
-        <div class="sideBox">
-          <p style="color:var(--muted2); font-size:13px; margin-bottom:10px;">Quick note:</p>
-          <p>
-            Resume button tabhi 100% work karega jab file ka naam exactly <b>Resume.pdf</b> ho
-            (same spelling, same case, repo root).
-          </p>
-        </div>
       </div>
     </div>
 
@@ -530,16 +547,16 @@
             <span class="jobMeta">Nov 2025 – Present · Karachi</span>
           </div>
           <ul>
-            <li>Served as the primary strategic and administrative partner to the CEO, managing complex calendars, high-priority meetings, and executive workflows to optimize leadership effectiveness.</li>
-            <li>Acted on behalf of the CEO in handling sensitive correspondence, executive communications, and confidential reports with absolute discretion and judgment.</li>
-            <li>Led end-to-end coordination of board-level and senior management meetings, including agenda development, briefing materials, minutes of meetings, and execution of action items.</li>
-            <li>Functioned as the central coordination point between the CEO, board members, senior leadership, and external stakeholders, ensuring alignment and timely communication.</li>
-            <li>Planned and executed domestic and international travel, executive itineraries, and corporate events, ensuring efficiency, confidentiality, and cost control.</li>
-            <li>Managed confidential corporate records, contracts, and executive documentation in compliance with governance and organizational policies.</li>
-            <li>Established and maintained structured digital and physical document control systems to support audit readiness and executive accessibility.</li>
-            <li>Monitored strategic initiatives, executive assignments, and cross-functional deliverables; provided structured progress reporting to the CEO.</li>
-            <li>Supported executive decision-making by ensuring accurate information flow, follow-through on directives, and coordination across departments.</li>
-            <li>Represented the Office of the CEO with professionalism, discretion, and authority in internal and external engagements.</li>
+            <li>Served as the primary strategic and administrative partner to the CEO, managing complex calendars and executive workflows.</li>
+            <li>Handled sensitive correspondence and confidential reporting with discretion and judgment.</li>
+            <li>Led board-level and senior management meetings (agenda, briefs, minutes, action follow-ups).</li>
+            <li>Coordinated communication between CEO, leadership, board members, and external stakeholders.</li>
+            <li>Planned domestic & international travel, itineraries, approvals, and corporate events.</li>
+            <li>Maintained confidential corporate records, contracts, and executive documentation.</li>
+            <li>Built structured digital/physical document control systems for audit readiness and fast retrieval.</li>
+            <li>Tracked strategic initiatives and cross-functional deliverables; provided progress reporting to CEO.</li>
+            <li>Supported decision-making with accurate information flow and strong follow-through on directives.</li>
+            <li>Represented the CEO Office professionally in internal and external engagements.</li>
           </ul>
         </div>
 
@@ -549,15 +566,14 @@
             <span class="jobMeta">Apr 2024 – Nov 2025</span>
           </div>
           <ul>
-            <li>Manage the CEO’s calendar, schedule appointments, and coordinate meetings.</li>
-            <li>Handle travel arrangements, including booking flights, accommodations, and preparing itineraries.</li>
-            <li>Prepare and organize documents, presentations, and reports for meetings.</li>
-            <li>Act as a primary point of contact for the CEO, screening and prioritizing emails, calls, and correspondence.</li>
-            <li>Draft and proofread emails, letters, and other communications on behalf of the CEO.</li>
-            <li>Maintain an organized and efficient office environment.</li>
-            <li>Coordinate and oversee special projects as assigned by the CEO.</li>
-            <li>Handle sensitive information with discretion and maintain confidentiality at all times.</li>
-            <li>Conduct research on various topics to provide relevant and timely information to the CEO.</li>
+            <li>Managed CEO’s calendar, appointments, and meeting coordination.</li>
+            <li>Handled travel arrangements (flights, hotels, itineraries, logistics).</li>
+            <li>Prepared documents, presentations, and reports for meetings.</li>
+            <li>Acted as primary point of contact; screened and prioritized emails/calls.</li>
+            <li>Drafted and proofread official communications on behalf of CEO.</li>
+            <li>Maintained office operations and coordinated special projects with timely follow-ups.</li>
+            <li>Handled sensitive information with confidentiality.</li>
+            <li>Conducted research and provided relevant information to support executive decisions.</li>
           </ul>
         </div>
 
@@ -567,49 +583,36 @@
             <span class="jobMeta">May 2023 – Apr 2024</span>
           </div>
           <ul>
-            <li>Coordinate and manage the CEO’s schedule, including meetings, appointments, and travel arrangements.</li>
-            <li>Prioritize and schedule commitments, ensuring efficient use of the CEO’s time.</li>
-            <li>Anticipate scheduling conflicts and proactively resolve them.</li>
-            <li>Serve as the primary point of contact for internal and external stakeholders communicating with the CEO.</li>
-            <li>Manage incoming calls, emails, and correspondence, responding on behalf of the CEO when appropriate.</li>
-            <li>Draft and proofread correspondence, reports, and presentations for the CEO.</li>
-            <li>Provide administrative support to the CEO, including managing expenses, preparing documents, and maintaining files and records.</li>
-            <li>Assist in preparing materials for meetings, including agendas, presentations, and reports.</li>
-            <li>Conduct research and gather information as requested by the CEO.</li>
-            <li>Build and maintain positive relationships with key stakeholders, including board members, senior executives, clients, and partners.</li>
-            <li>Coordinate meetings and events, including logistics, invitations, and follow-up actions.</li>
-            <li>Represent the CEO in meetings and interactions as needed.</li>
-            <li>Handle sensitive information with the utmost confidentiality and discretion.</li>
-            <li>Maintain confidentiality regarding organizational strategies, decisions, and personnel matters.</li>
-            <li>Assist the CEO in special projects and initiatives as assigned.</li>
-            <li>Take on additional responsibilities as needed to support the CEO and the executive team.</li>
+            <li>Managed CEO schedule, meetings, appointments, and travel coordination.</li>
+            <li>Resolved scheduling conflicts proactively and prioritized commitments.</li>
+            <li>Handled correspondence, reports, and presentations with discretion.</li>
+            <li>Prepared meeting agendas/materials and tracked action items.</li>
+            <li>Coordinated meetings/events and maintained stakeholder relationships.</li>
+            <li>Supported special projects and ensured confidentiality of organizational matters.</li>
           </ul>
         </div>
 
         <div class="job">
           <div class="jobTop">
-            <p class="jobTitle">PRFTC (Pakistan Railway Freight Transportation Co.) — Executive Secretary to CEO</p>
+            <p class="jobTitle">PRFTC — Executive Secretary to CEO</p>
             <span class="jobMeta">Apr 2022 – May 2023</span>
           </div>
           <ul>
             <li>Supported executive operations, coordination, documentation, and reporting.</li>
-            <li>Maintained records and ensured smooth communication flow with stakeholders.</li>
+            <li>Maintained records and ensured smooth communication with stakeholders.</li>
           </ul>
         </div>
 
         <div class="job">
           <div class="jobTop">
-            <p class="jobTitle">Pakistan Railway (RFD Department) — Executive Secretary to Director</p>
+            <p class="jobTitle">Pakistan Railway (RFD) — Executive Secretary to Director</p>
             <span class="jobMeta">Jul 2017 – Apr 2022</span>
           </div>
           <ul>
-            <li>Handling all Administration work.</li>
-            <li>Maintain all files & bills authorized record as per Terms of Pakistan Railways.</li>
-            <li>Manage all site labor and office staff issues and assist to Project Director.</li>
-            <li>Manage and arrange full-cycle recruiting process including job marketing, sourcing, interviewing.</li>
-            <li>Develop best recruitment strategies to attract, screen, evaluate, select, induct candidates and enhance performance, culture and retention.</li>
-            <li>Well conversant with recruitment rules and regulations.</li>
-            <li>Leverage recruiting tools such as LinkedIn, Rozee.pk and other social media avenues to attract and find talent.</li>
+            <li>Handled administration and maintained files & authorized billing records.</li>
+            <li>Managed site labor/office staff issues and assisted Project Director.</li>
+            <li>Supported hiring cycle (job marketing, sourcing, interviewing).</li>
+            <li>Used recruiting tools like LinkedIn and Rozee.pk for talent sourcing.</li>
           </ul>
         </div>
 
@@ -619,25 +622,21 @@
             <span class="jobMeta">Jan 2015 – Jul 2017</span>
           </div>
           <ul>
-            <li>Manage and arrange full-cycle recruiting process including job marketing, sourcing, interviewing.</li>
-            <li>Develop best recruitment strategies to attract, screen, evaluate, select, induct candidates and enhance performance, culture and retention.</li>
-            <li>Well conversant with recruitment rules and regulations.</li>
-            <li>Leverage recruiting tools such as LinkedIn, Rozee.pk and other social media avenues to attract and find talent.</li>
+            <li>Supported executive coordination, scheduling, and documentation.</li>
+            <li>Assisted recruitment cycle and talent sourcing through LinkedIn / Rozee.pk.</li>
           </ul>
         </div>
 
         <div class="job">
           <div class="jobTop">
-            <p class="jobTitle">Prime Healthcare Hospital (Bayview Hospital) — Executive Assistant to CEO</p>
+            <p class="jobTitle">Prime Healthcare (Bayview Hospital) — Executive Assistant to CEO</p>
             <span class="jobMeta">Jul 2012 – Dec 2014</span>
           </div>
           <ul>
-            <li>Managed professional and personal scheduling for CEO (agendas, mail, email, phone calls, appointments, and other company logistics).</li>
-            <li>Coordinated complex scheduling and calendar management, and ensured smooth content/flow of information to senior executives.</li>
-            <li>Managed executives’ travel logistics and activities, including accommodations, transportation, and meals.</li>
-            <li>Provided administrative and office support (typing, dictation, spreadsheet creation, faxing, and maintaining filing system and contacts database).</li>
-            <li>Maintained professionalism and strict confidentiality with all materials.</li>
-            <li>Organized team communications and planned events, both internal and off-site.</li>
+            <li>Managed professional and personal scheduling for CEO and senior executives.</li>
+            <li>Coordinated travel logistics and executive activities.</li>
+            <li>Provided office support, reports, spreadsheets, filing systems, and confidentiality.</li>
+            <li>Organized team communications and events (internal and off-site).</li>
           </ul>
         </div>
       </div>
@@ -655,11 +654,10 @@
           <h3>EXECUTIVE SUPPORT</h3>
           <ul class="list">
             <li>Calendar Management (complex executive scheduling)</li>
-            <li>Office Organization (smooth office operations)</li>
-            <li>Travel Coordination (end-to-end travel planning)</li>
-            <li>Document Preparation (reports, presentations, minutes)</li>
-            <li>Exceptional Communication (across levels)</li>
-            <li>Confidentiality & discretion</li>
+            <li>Meeting ops: agendas, minutes, action tracking</li>
+            <li>Travel coordination and vendor follow-ups</li>
+            <li>Documentation control and confidential handling</li>
+            <li>Executive communication and stakeholder management</li>
             <li>Problem-solving and proactive coordination</li>
           </ul>
         </div>
@@ -669,8 +667,8 @@
           <ul class="list">
             <li>Microsoft Office: Word, Excel, PowerPoint, Outlook</li>
             <li>Google Workspace: Docs, Sheets, Drive, Calendar</li>
-            <li>Trackers, dashboards, reporting sheets</li>
-            <li>AI tools for drafting and structured reporting</li>
+            <li>Trackers, dashboards, structured reporting</li>
+            <li>AI tools for drafting and summaries</li>
           </ul>
         </div>
       </div>
@@ -688,15 +686,15 @@
           <h3>DEGREES & DIPLOMAS</h3>
           <ul class="list">
             <li>BBA — Ilma University (2021)</li>
-            <li>ACCP Pro (3-Year Advanced Diploma in Software Engineering) — Aptech (2017–2020)</li>
-            <li>1-Year Advanced Diploma in IT — Sindh Technical Board (2012–2013)</li>
+            <li>ACCP Pro — Aptech (2017–2020)</li>
+            <li>Advanced Diploma in IT — Sindh Technical Board (2012–2013)</li>
           </ul>
         </div>
 
         <div class="box">
           <h3>WORK STYLE</h3>
           <ul class="list">
-            <li>Detail-focused, reliable under pressure</li>
+            <li>Detail-focused, calm under pressure</li>
             <li>Clear follow-ups and structured communication</li>
             <li>Process-driven execution and documentation discipline</li>
           </ul>
@@ -732,3 +730,4 @@
   </script>
 </body>
 </html>
+
