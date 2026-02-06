@@ -7,172 +7,323 @@
 
 <style>
 :root{
-  --bg:#070A12;
+  --bg0:#050812;
+  --bg1:#0B1220;
   --card:rgba(255,255,255,.06);
   --stroke:rgba(255,255,255,.12);
   --text:#EAF0FF;
-  --muted:#B7C0FF;
+  --muted:rgba(234,240,255,.70);
+  --muted2:rgba(234,240,255,.55);
   --accent1:#62D2FF;
   --accent2:#7C5CFF;
+  --good:#36D399;
+  --shadow:0 20px 70px rgba(0,0,0,.45);
   --radius:22px;
+  --radius2:16px;
+  --max:1200px;
 }
 
 *{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
 body{
   margin:0;
-  font-family:system-ui,Segoe UI,Roboto,Arial;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
   color:var(--text);
   background:
-    radial-gradient(900px 600px at 15% 10%, rgba(98,210,255,.18), transparent 60%),
-    radial-gradient(900px 700px at 85% 15%, rgba(124,92,255,.18), transparent 65%),
-    linear-gradient(180deg,#050812,#0B1220);
+    radial-gradient(900px 600px at 14% 12%, rgba(98,210,255,.18), transparent 60%),
+    radial-gradient(900px 700px at 86% 10%, rgba(124,92,255,.18), transparent 62%),
+    radial-gradient(900px 700px at 60% 86%, rgba(98,210,255,.12), transparent 65%),
+    linear-gradient(180deg,var(--bg0),var(--bg1));
+  min-height:100vh;
 }
 
-.wrap{
-  max-width:1200px;
-  margin:auto;
-  padding:40px 20px 80px;
-}
+a{color:inherit;}
+.wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 80px;}
 
-/* HERO */
-.hero{
+/* Topbar */
+.topbar{
+  position:sticky;
+  top:14px;
+  z-index:20;
+  margin:0 auto 22px;
+  padding:12px 14px;
+  border-radius:999px;
+  background:rgba(10,16,30,.55);
+  border:1px solid var(--stroke);
+  backdrop-filter:blur(14px);
+  box-shadow:0 10px 35px rgba(0,0,0,.35);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width:320px;
+}
+.avatar{
+  width:50px;
+  height:50px;
+  border-radius:14px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.06);
+  box-shadow:0 12px 26px rgba(0,0,0,.32);
+  flex-shrink:0;
+}
+.avatar img{width:100%;height:100%;object-fit:cover;display:block;}
+.brandName{font-weight:900;font-size:18px;letter-spacing:.2px;line-height:1.1;}
+.brandSub{font-size:13px;color:var(--muted2);margin-top:4px;}
+.nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;}
+.nav a{
+  text-decoration:none;
+  font-size:13px;
+  color:var(--muted);
+  padding:10px 14px;
+  border-radius:999px;
+  border:1px solid transparent;
+}
+.nav a:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12);color:var(--text);}
+
+/* Cards / Sections */
+.card{
   background:var(--card);
   border:1px solid var(--stroke);
   border-radius:var(--radius);
-  padding:30px;
+  box-shadow:var(--shadow);
+  backdrop-filter:blur(14px);
+  overflow:hidden;
+}
+.section{
+  margin-top:18px;
+  padding:24px;
+}
+.sectionHead{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:12px;
+  margin-bottom:14px;
+}
+.sectionHead h3{
+  margin:0;
+  font-size:16px;
+  letter-spacing:.18em;
+  color:var(--muted2);
+}
+.sectionHead .hint{
+  color:var(--muted2);
+  font-size:13px;
 }
 
+/* Hero */
+.hero{
+  padding:22px;
+}
 .heroGrid{
   display:grid;
-  grid-template-columns:340px 1fr;
-  gap:34px;
+  grid-template-columns:360px 1fr;
+  gap:26px;
   align-items:center;
 }
-
-.heroImg img{
+.heroPhoto{
+  position:relative;
+  border-radius:20px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(0,0,0,.22);
+  box-shadow:0 28px 80px rgba(0,0,0,.45);
+}
+.heroPhoto img{
   width:100%;
   height:360px;
   object-fit:cover;
-  border-radius:18px;
-  border:2px solid rgba(255,255,255,.25);
+  display:block;
+}
+.photoBar{
+  position:absolute;
+  left:14px; right:14px; bottom:14px;
+  padding:12px 12px;
+  border-radius:16px;
+  background:rgba(0,0,0,.45);
+  border:1px solid rgba(255,255,255,.12);
+  backdrop-filter:blur(10px);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+}
+.pill{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:var(--muted);
+  font-size:12.5px;
+}
+.dot{
+  width:9px;height:9px;border-radius:50%;
+  background:var(--good);
+  box-shadow:0 0 0 6px rgba(54,211,153,.12);
+}
+.chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;}
+.chip{
+  font-size:12px;
+  padding:8px 10px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.06);
+  color:var(--muted);
+  white-space:nowrap;
 }
 
 .heroContent h1{
-  font-size:46px;
   margin:0;
-  font-weight:800;
+  font-size:52px;
+  line-height:1.02;
+  letter-spacing:-.9px;
 }
-
+.heroContent h1 span{
+  background:linear-gradient(135deg,var(--accent1),var(--accent2));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
 .heroContent h2{
-  margin:10px 0;
-  font-size:22px;
-  font-weight:600;
+  margin:12px 0 10px;
+  font-size:20px;
   color:var(--muted);
+  font-weight:650;
 }
-
-.heroContent .meta{
-  margin:8px 0 18px;
-  color:#D0D6FF;
+.metaRow{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0 18px;}
+.metaChip{
+  padding:10px 14px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(0,0,0,.18);
+  color:var(--muted);
+  font-size:13px;
 }
-
-.heroContent p{
-  max-width:75ch;
+.summary{
+  margin:0;
+  color:rgba(234,240,255,.80);
   line-height:1.75;
-  color:#E4EAFF;
+  max-width:80ch;
 }
-
-.actions{
-  display:flex;
-  gap:12px;
-  margin-top:20px;
-  flex-wrap:wrap;
-}
-
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;}
 .btn{
   text-decoration:none;
-  padding:13px 18px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:12px 16px;
   border-radius:14px;
-  font-weight:700;
-  border:1px solid var(--stroke);
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.06);
+  color:var(--text);
+  font-size:14px;
+  font-weight:800;
+  transition:transform .08s ease, background .12s ease;
 }
-
+.btn:hover{background:rgba(255,255,255,.10);transform:translateY(-1px);}
 .btnPrimary{
   background:linear-gradient(135deg,var(--accent1),var(--accent2));
   color:#060A14;
+  border-color:transparent;
 }
+.btnGhost{background:rgba(0,0,0,.22);}
 
-.btnGhost{
-  background:rgba(0,0,0,.35);
-  color:var(--text);
+/* Experience */
+.timeline{
+  position:relative;
+  padding-left:18px;
+  display:grid;
+  gap:14px;
 }
-
-/* SECTION */
-.section{
-  margin-top:28px;
-  background:var(--card);
-  border:1px solid var(--stroke);
-  border-radius:var(--radius);
-  padding:26px;
+.timeline:before{
+  content:"";
+  position:absolute;
+  left:6px; top:8px; bottom:8px;
+  width:2px;
+  background:linear-gradient(180deg, rgba(98,210,255,.55), rgba(124,92,255,.55));
+  opacity:.85;
 }
-
-.section h3{
-  margin:0 0 16px;
-  letter-spacing:.15em;
-  color:#AEB7FF;
-}
-
-/* EXPERIENCE */
 .job{
-  margin-bottom:22px;
+  position:relative;
+  padding:16px 16px 16px 18px;
+  border-radius:var(--radius2);
+  background:rgba(0,0,0,.18);
+  border:1px solid rgba(255,255,255,.10);
 }
-
-.job h4{
-  margin:0;
-  font-size:18px;
+.job:before{
+  content:"";
+  position:absolute;
+  left:-2px; top:18px;
+  width:12px;height:12px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--accent1),var(--accent2));
+  box-shadow:0 0 0 6px rgba(98,210,255,.10);
 }
-
-.job span{
-  font-size:13px;
-  color:#AEB7FF;
+.jobTop{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:10px;
+  margin-bottom:8px;
 }
-
+.jobTitle{margin:0;font-size:16px;font-weight:900;}
+.jobMeta{color:var(--muted2);font-size:13px;white-space:nowrap;}
 .job ul{
-  margin:10px 0 0 18px;
-  line-height:1.7;
-  color:#E4EAFF;
+  margin:10px 0 0;
+  padding-left:18px;
+  color:var(--muted);
+  line-height:1.75;
 }
+.job li{margin:6px 0;}
 
-/* SKILLS */
-.skills{
+/* Skills grid */
+.grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:16px;
+  gap:12px;
 }
-
 .box{
-  background:rgba(0,0,0,.35);
-  border:1px solid var(--stroke);
-  border-radius:16px;
-  padding:18px;
+  background:rgba(0,0,0,.18);
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:var(--radius2);
+  padding:16px;
 }
-
-.box ul{
-  margin:0 0 0 18px;
-  line-height:1.7;
-}
-
-/* FOOTER */
-footer{
-  margin-top:30px;
-  text-align:center;
-  color:#9AA4FF;
+.box h4{
+  margin:0 0 10px;
   font-size:13px;
+  letter-spacing:.14em;
+  color:var(--muted2);
+}
+.box ul{
+  margin:0;
+  padding-left:18px;
+  color:var(--muted);
+  line-height:1.75;
+}
+.box li{margin:6px 0;}
+
+/* Footer */
+.footer{
+  margin-top:18px;
+  text-align:center;
+  color:var(--muted2);
+  font-size:12.5px;
 }
 
-@media(max-width:900px){
+@media(max-width:980px){
+  .topbar{position:static;border-radius:18px;}
   .heroGrid{grid-template-columns:1fr;}
-  .heroImg img{height:280px;}
-  .skills{grid-template-columns:1fr;}
+  .heroContent h1{font-size:40px;}
+  .heroPhoto img{height:280px;}
+  .grid{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -180,133 +331,270 @@ footer{
 <body>
 <div class="wrap">
 
-<!-- HERO -->
-<section class="hero">
-  <div class="heroGrid">
-
-    <div class="heroImg">
-      <img src="profile.jpg" alt="Rabeel Ahmed Siddiqui">
-    </div>
-
-    <div class="heroContent">
-      <h1>Rabeel Ahmed Siddiqui</h1>
-      <h2>Executive Secretary & Operations Support</h2>
-
-      <div class="meta">📍 Karachi, Pakistan · ✉ rabeel_siddiqui@outlook.com · 📞 +92 333 3161273</div>
-
-      <p>
-        Executive Secretary with 12+ years of experience supporting CEOs and senior leadership.
-        Expert in calendar management, board coordination, executive communication, confidential
-        documentation, and complex domestic & international travel planning.
-      </p>
-
-      <div class="actions">
-        <a href="Resume.pdf" class="btn btnPrimary" download>⬇ Download Resume</a>
-        <a href="https://www.linkedin.com/in/shaikh-ras-386585207" target="_blank" class="btn btnGhost">LinkedIn</a>
-        <a href="mailto:rabeel_siddiqui@outlook.com" class="btn btnGhost">Email</a>
-        <a href="https://wa.me/923333161273" target="_blank" class="btn btnGhost">WhatsApp</a>
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="brand">
+      <div class="avatar"><img src="profile.jpg" alt="Rabeel Ahmed Siddiqui"></div>
+      <div>
+        <div class="brandName">Rabeel Ahmed Siddiqui</div>
+        <div class="brandSub">Executive Secretary · Karachi, Pakistan</div>
       </div>
     </div>
-
+    <div class="nav">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
   </div>
-</section>
 
-<!-- EXPERIENCE -->
-<section class="section">
-<h3>EXPERIENCE</h3>
+  <!-- HERO -->
+  <div class="card hero" id="about">
+    <div class="heroGrid">
 
-<div class="job">
-<h4>Telec Group — Management Secretary</h4>
-<span>Nov 2025 – Present · Karachi</span>
-<ul>
-<li>Primary administrative partner to CEO managing executive workflows.</li>
-<li>Board & senior management meetings, agendas, minutes & follow-ups.</li>
-<li>Confidential correspondence, contracts, and documentation control.</li>
-<li>Domestic & international travel planning and executive logistics.</li>
-<li>Cross-department coordination and progress reporting.</li>
-</ul>
-</div>
+      <div class="heroPhoto">
+        <img src="profile.jpg" alt="Rabeel Ahmed Siddiqui">
+        <div class="photoBar">
+          <div class="pill"><span class="dot"></span> Available · Confidential & process-driven</div>
+          <div class="chips">
+            <span class="chip">Executive Support</span>
+            <span class="chip">Meeting Ops</span>
+            <span class="chip">Travel</span>
+          </div>
+        </div>
+      </div>
 
-<div class="job">
-<h4>Eplanet Global Pakistan — Executive Secretary to CEO</h4>
-<span>Apr 2024 – Nov 2025</span>
-<ul>
-<li>CEO calendar, meetings, and stakeholder coordination.</li>
-<li>Presentations, reports, emails, and official communications.</li>
-<li>Travel bookings, itineraries, and approvals.</li>
-</ul>
-</div>
+      <div class="heroContent">
+        <h1>Rabeel <span>Ahmed Siddiqui</span></h1>
+        <h2>Executive Secretary & Operations Support</h2>
 
-<div class="job">
-<h4>Nobel Group — Executive Secretary to CEO</h4>
-<span>May 2023 – Apr 2024</span>
-<ul>
-<li>Scheduling, correspondence, and executive support.</li>
-<li>Meeting materials, minutes, and logistics.</li>
-</ul>
-</div>
+        <div class="metaRow">
+          <div class="metaChip">📍 Karachi, Pakistan</div>
+          <div class="metaChip">✉️ rabeel_siddiqui@outlook.com</div>
+          <div class="metaChip">📞 +92 333 3161273</div>
+        </div>
 
-<div class="job">
-<h4>PRFTC (Pakistan Railway) — Executive Secretary to CEO</h4>
-<span>Apr 2022 – May 2023</span>
-<ul>
-<li>Executive coordination, recruitment processes, and reporting.</li>
-<li>HR records, compliance, and internal communication.</li>
-</ul>
-</div>
+        <p class="summary">
+          Executive support professional with 12+ years of experience assisting CEOs and senior leadership.
+          Strong in complex scheduling, board coordination, confidential documentation, stakeholder communication,
+          and end-to-end travel logistics. Known for discretion, structured follow-through, and high-quality executive output.
+        </p>
 
-<div class="job">
-<h4>Pakistan Railway (RFD) — Executive Secretary to Director</h4>
-<span>Jul 2017 – Apr 2022</span>
-<ul>
-<li>Administration, files, bills, and site coordination.</li>
-<li>Recruitment support and documentation.</li>
-</ul>
-</div>
+        <div class="actions">
+          <a href="Resume.pdf" class="btn btnPrimary" download>⬇ Download Resume</a>
+          <a href="https://www.linkedin.com/in/shaikh-ras-386585207" target="_blank" rel="noopener" class="btn btnGhost">LinkedIn</a>
+          <a href="mailto:rabeel_siddiqui@outlook.com" class="btn btnGhost">Email</a>
+          <a href="https://wa.me/923333161273" target="_blank" rel="noopener" class="btn btnGhost">WhatsApp</a>
+        </div>
 
-<div class="job">
-<h4>OHM IT Solutions — Executive Assistant to CEO</h4>
-<span>Jan 2015 – Jul 2017</span>
-<ul>
-<li>Scheduling, documentation, and executive assistance.</li>
-</ul>
-</div>
+        <p style="margin:12px 0 0;color:var(--muted2);font-size:12.5px;">
+          If download doesn’t start, open the PDF directly:
+          <a href="Resume.pdf" target="_blank" rel="noopener">Resume.pdf</a>
+        </p>
+      </div>
 
-</section>
+    </div>
+  </div>
 
-<!-- SKILLS -->
-<section class="section">
-<h3>SKILLS</h3>
+  <!-- EXPERIENCE -->
+  <div class="card section" id="experience">
+    <div class="sectionHead">
+      <h3>EXPERIENCE</h3>
+      <div class="hint">Detailed, executive-focused highlights</div>
+    </div>
 
-<div class="skills">
-<div class="box">
-<ul>
-<li>Executive Calendar & Diary Management</li>
-<li>Meeting Minutes & Action Tracking</li>
-<li>Travel Planning & Coordination</li>
-<li>Confidential Documentation</li>
-</ul>
-</div>
+    <div class="timeline">
 
-<div class="box">
-<ul>
-<li>MS Office & Google Workspace</li>
-<li>Executive Communication</li>
-<li>Reporting & Dashboards</li>
-<li>Stakeholder Coordination</li>
-</ul>
-</div>
-</div>
-</section>
+      <div class="job">
+        <div class="jobTop">
+          <p class="jobTitle">Telec Group — Management Secretary</p>
+          <span class="jobMeta">Nov 2025 – Present · Karachi</span>
+        </div>
+        <ul>
+          <li>Managed CEO’s complex calendar, priorities, and day-to-day executive workflows to maximize leadership effectiveness.</li>
+          <li>Coordinated board-level and senior management meetings (agenda, briefs, minutes, and action tracking).</li>
+          <li>Handled sensitive correspondence, approvals, and executive communications with confidentiality and discretion.</li>
+          <li>Planned domestic and international travel, itineraries, logistics, and vendor coordination.</li>
+          <li>Maintained structured record-control systems for quick retrieval, audit readiness, and governance support.</li>
+          <li>Prepared executive reports, summaries, and updates for decision support and follow-ups.</li>
+          <li>Acted as central coordination point between CEO office, department heads, and external stakeholders.</li>
+          <li>Ensured timely execution of directives through structured tracking and follow-through.</li>
+          <li>Managed confidential documents, contracts, and official files with version control and access discipline.</li>
+        </ul>
+      </div>
 
-<footer>
-© <span id="y"></span> Rabeel Ahmed Siddiqui
-</footer>
+      <div class="job">
+        <div class="jobTop">
+          <p class="jobTitle">Eplanet Global Pakistan — Executive Secretary to CEO</p>
+          <span class="jobMeta">Apr 2024 – Nov 2025</span>
+        </div>
+        <ul>
+          <li>Managed CEO scheduling, appointments, and high-priority meeting coordination.</li>
+          <li>Prepared presentations, reports, and meeting documentation; ensured accurate minutes and follow-ups.</li>
+          <li>Handled travel arrangements including flights, accommodation, itineraries, and approvals.</li>
+          <li>Drafted and proofread official communication on behalf of leadership with professional tone and accuracy.</li>
+          <li>Supported special projects and ensured on-time closure through follow-up and stakeholder coordination.</li>
+          <li>Maintained confidentiality across HR, finance, client communication, and internal matters.</li>
+          <li>Managed executive inbox/calls, prioritized tasks, and ensured smooth information flow.</li>
+          <li>Maintained structured files and trackers to improve reporting and operational visibility.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="jobTop">
+          <p class="jobTitle">Nobel Group — Executive Secretary to CEO</p>
+          <span class="jobMeta">May 2023 – Apr 2024</span>
+        </div>
+        <ul>
+          <li>Coordinated CEO calendar and resolved scheduling conflicts proactively.</li>
+          <li>Managed executive correspondence, drafting reports, letters, and internal/external emails.</li>
+          <li>Prepared meeting agendas, presentations, minutes, and tracked action items for closure.</li>
+          <li>Coordinated events and stakeholder engagements, ensuring strong follow-through.</li>
+          <li>Handled sensitive information with strict confidentiality and professional judgment.</li>
+          <li>Supported CEO initiatives and ensured timely cross-department coordination.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="jobTop">
+          <p class="jobTitle">PRFTC — Executive Secretary to CEO</p>
+          <span class="jobMeta">Apr 2022 – May 2023</span>
+        </div>
+        <ul>
+          <li>Supported executive operations through coordination, documentation, and structured reporting.</li>
+          <li>Maintained official records and ensured smooth communication with internal and external stakeholders.</li>
+          <li>Assisted recruitment support activities where required (screening, coordination, documentation).</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="jobTop">
+          <p class="jobTitle">Pakistan Railway (RFD) — Executive Secretary to Director</p>
+          <span class="jobMeta">Jul 2017 – Apr 2022</span>
+        </div>
+        <ul>
+          <li>Handled administration and maintained authorized files, bills, and official records.</li>
+          <li>Supported site coordination and managed staff/labor issues and documentation needs.</li>
+          <li>Assisted recruitment activities, sourcing and coordinating hiring workflows when required.</li>
+          <li>Leveraged platforms such as LinkedIn / Rozee.pk for candidate sourcing and coordination.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="jobTop">
+          <p class="jobTitle">OHM IT Solutions — Executive Assistant to CEO</p>
+          <span class="jobMeta">Jan 2015 – Jul 2017</span>
+        </div>
+        <ul>
+          <li>Provided executive assistance, scheduling support, and documentation management.</li>
+          <li>Supported coordination and internal communication between leadership and teams.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="jobTop">
+          <p class="jobTitle">Prime Healthcare (Bayview Hospital) — Executive Assistant to CEO</p>
+          <span class="jobMeta">Jul 2012 – Dec 2014</span>
+        </div>
+        <ul>
+          <li>Managed CEO scheduling and coordinated meetings, calls, and appointments.</li>
+          <li>Handled travel logistics and executive coordination for senior leadership.</li>
+          <li>Prepared documents, spreadsheets, and maintained filing systems and confidentiality.</li>
+          <li>Organized team communications and internal/off-site events.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="card section" id="skills">
+    <div class="sectionHead">
+      <h3>SKILLS</h3>
+      <div class="hint">Executive-ready toolset</div>
+    </div>
+
+    <div class="grid">
+      <div class="box">
+        <h4>EXECUTIVE SUPPORT</h4>
+        <ul>
+          <li>Complex calendar & diary management</li>
+          <li>Meeting agendas, minutes, and action tracking</li>
+          <li>Stakeholder coordination and executive follow-ups</li>
+          <li>Confidential documentation and record control</li>
+          <li>Travel coordination, vendor handling, approvals</li>
+          <li>Executive communication and professional correspondence</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h4>TOOLS & REPORTING</h4>
+        <ul>
+          <li>Microsoft Office: Word, Excel, PowerPoint, Outlook</li>
+          <li>Google Workspace: Docs, Sheets, Drive, Calendar</li>
+          <li>Trackers, dashboards, reporting sheets</li>
+          <li>AI tools for drafting, summarizing, structured reporting</li>
+          <li>Basic reporting knowledge for performance tracking and operational visibility</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="card section" id="education">
+    <div class="sectionHead">
+      <h3>EDUCATION</h3>
+      <div class="hint">Academic background</div>
+    </div>
+
+    <div class="grid">
+      <div class="box">
+        <h4>DEGREES & DIPLOMAS</h4>
+        <ul>
+          <li>BBA — Ilma University (2021)</li>
+          <li>ACCP Pro — Aptech (2017–2020)</li>
+          <li>Advanced Diploma in IT — Sindh Technical Board (2012–2013)</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h4>WORK STYLE</h4>
+        <ul>
+          <li>Discreet, detail-focused, and reliable under pressure</li>
+          <li>Fast follow-ups with clear, structured communication</li>
+          <li>Process-driven execution and documentation discipline</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="card section" id="contact">
+    <div class="sectionHead">
+      <h3>CONTACT</h3>
+      <div class="hint">Let’s connect</div>
+    </div>
+
+    <p style="margin:0;color:var(--muted);line-height:1.75;">
+      For professional opportunities, you can reach me via email or LinkedIn.
+    </p>
+
+    <div class="actions" style="margin-top:14px;">
+      <a class="btn btnGhost" href="mailto:rabeel_siddiqui@outlook.com">✉️ rabeel_siddiqui@outlook.com</a>
+      <a class="btn btnGhost" href="https://wa.me/923333161273" target="_blank" rel="noopener">💬 +92 333 3161273</a>
+      <a class="btn btnGhost" href="https://www.linkedin.com/in/shaikh-ras-386585207" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btnPrimary" href="Resume.pdf" target="_blank" rel="noopener">⬇ Resume PDF</a>
+    </div>
+
+    <div class="footer">© <span id="y"></span> Rabeel Ahmed Siddiqui</div>
+  </div>
 
 </div>
 
 <script>
-document.getElementById("y").textContent = new Date().getFullYear();
+  document.getElementById("y").textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
+
