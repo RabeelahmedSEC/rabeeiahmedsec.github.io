@@ -501,6 +501,79 @@
       .grid{ grid-template-columns:1fr; }
       .servicesGrid{ grid-template-columns:1fr; }
     }
+    /* ==================================
+   GLOBAL CARD HOVER (Skills / Education / Contact)
+   SAFE – NO LAYOUT CHANGE
+================================== */
+
+/* Skills & Education boxes */
+.box{
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    background .25s ease,
+    border-color .25s ease;
+}
+
+.box:hover{
+  transform: translateY(-5px);
+  background: linear-gradient(
+    180deg,
+    rgba(94,167,255,.14),
+    rgba(255,255,255,.04)
+  );
+  border-color: rgba(94,167,255,.35);
+  box-shadow:
+    0 18px 40px rgba(0,0,0,.55),
+    0 0 0 1px rgba(94,167,255,.22);
+}
+
+/* Heading highlight */
+.box:hover h4{
+  color:#5ea7ff;
+}
+
+/* List text clarity */
+.box:hover li{
+  color: rgba(234,240,255,.9);
+}
+
+/* ==================================
+   CONTACT BUTTON / PILL HOVER
+================================== */
+
+.linkPill,
+.btn,
+.contactRow a{
+  transition:
+    transform .2s ease,
+    background .2s ease,
+    box-shadow .2s ease,
+    border-color .2s ease;
+}
+
+.linkPill:hover,
+.contactRow a:hover{
+  transform: translateY(-3px);
+  background: linear-gradient(
+    180deg,
+    rgba(94,167,255,.18),
+    rgba(255,255,255,.06)
+  );
+  border-color: rgba(94,167,255,.45);
+  box-shadow:
+    0 14px 30px rgba(0,0,0,.45),
+    0 0 0 1px rgba(94,167,255,.22);
+}
+
+/* ==================================
+   SECTION TITLE MICRO INTERACTION
+================================== */
+
+.section:hover h3{
+  color:#ffffff;
+}
+
   </style>
 </head>
 
